@@ -1,6 +1,6 @@
 export default {
     state: {
-        funds: 1000,
+        funds: 10000,
         stocks: []
     },
     mutations: {
@@ -9,7 +9,7 @@ export default {
             if (record) {
                 record.quantity += quantity
             } else {
-                this.stocks.push({id: stockId, quantity})
+                state.stocks.push({id: stockId, quantity})
             }
             state.funds -= stockPrice * quantity
         },
@@ -26,7 +26,7 @@ export default {
     },
     actions: {
         sellStock({commit}, order) {
-            commit('SELL_STOCK', order)
+            commit('SELL_STOCKS', order)
         }
     },
     getters: {
